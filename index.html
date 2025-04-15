@@ -65,6 +65,8 @@
                     </div>
                 </div>
             </form>
+
+            <p id="error"></p>
         </main>
 
         <footer>
@@ -72,5 +74,36 @@
             <p>Already have an account? <a href="https://youtu.be/4PTXSKdr40k?si=oxskp3zsmlvQDqSf">Log in</a></p>
         </footer>
     </div>
+
+    <script>
+        let error = document.getElementById('error');
+        let password = document.getElementById('password');
+        let confirmPassword = document.getElementById('confirm-password');
+        let mismatch = false;
+
+        password.addEventListener('input', validatePasswords);
+        confirmPassword.addEventListener('input', validatePasswords);
+
+        function validatePasswords() {
+            if (password.value == confirmPassword.value && mismatch) {
+                error.textContent = '';
+                mismatch = false;
+            }
+        }
+
+        document.getElementById('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (mismatch) return;
+            
+            if (password.value !== confirmPassword.value) {
+                error.textContent = 'Passwords do not match.';
+                mismatch = true;
+                return;
+            }
+
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        })
+    </script>
 </body>
 </html>
