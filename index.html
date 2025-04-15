@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Sign up</title>
 </head>
 <body>
     <div id="left">
@@ -20,55 +21,54 @@
     </div>
 
     <div id="right">
-        <main>
-            <section id="hero">
-                <p>
-                    This is not a real online service! You know you need something
-                    like this in your life to help you realize your deepest dreams.
-                    Sign up now to get started.
-                    <br>
-                    You know you want to.
-                </p>
-            </section>
+        <section id="hero">
+            <p>
+                This is not a real online service! You know you need something
+                like this in your life to help you realize your deepest dreams.
+                <br>
+                Sign up <em>now</em> to get started.
+                <br><br>
+                You <em>know</em> you want to.
+            </p>
+        </section>
 
-            <section id="form">
-                <h1>Let's do this!</h1>
-                <form action="post">
+        <main>
+            <h2>Let's do this!</h1>
+            <form id="form" method="get">
+                <div class="column">
                     <div class="field">
                         <label for="first-name">First name</label>
-                        <input type="text" name="first-name" id="first-name">
+                        <input type="text" name="first-name" id="first-name" placeholder="Thor" required>
                     </div>
-
-                    <div class="field">
-                        <label for="last-name">Last name</label>
-                        <input type="text" name="last-name" id="last-name">
-                    </div>
-
                     <div class="field">
                         <label for="email">Email</label>
-                        <input type="text" name="email" id="email">
+                        <input type="email" name="email" id="email" placeholder="thor.odinson@example.com" required>
                     </div>
-
-                    <div class="field">
-                        <label for="phone-number">Phone number</label>
-                        <input type="text" name="phone-number" id="phone-number">
-                    </div>
-
                     <div class="field">
                         <label for="password">Password</label>
-                        <input type="text" name="password" id="password">
+                        <input type="password" name="password" id="password" required>
                     </div>
+                </div>
 
+                <div class="column">
+                    <div class="field">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Odinson" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone-number">Phone number</label>
+                        <input type="tel" name="phone-number" id="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    </div>
                     <div class="field">
                         <label for="confirm-password">Comfirm password</label>
-                        <input type="text" name="confirm-password" id="confirm-password">
+                        <input type="password" name="confirm-password" id="confirm-password" required>
                     </div>
-                </form>
-            </section>
+                </div>
+            </form>
         </main>
 
         <footer>
-            <button type="submit">Create Account</button>
+            <button type="submit" form="form">Create Account</button>
             <p>Already have an account? <a href="https://youtu.be/4PTXSKdr40k?si=oxskp3zsmlvQDqSf">Log in</a></p>
         </footer>
     </div>
